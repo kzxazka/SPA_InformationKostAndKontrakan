@@ -1,16 +1,137 @@
-
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rozak Home</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  </head>
-  <body class="bg-light text-secondary">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kost N Kontrakan Rozak - Tempat Nyaman Untuk Tinggal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">Kost N Kontrakan Rozak</div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#facilities">Fasilitas</a></li>
+                    <li><a href="#gallery">Galeri</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Selamat Datang di Kost N Kontrakan Rozak</h1>
+                <p>Tempat tinggal nyaman dengan fasilitas lengkap di lokasi strategis</p>
+                <a href="#contact" class="cta-button">Hubungi Kami</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities" class="facilities">
+        <div class="container">
+            <h2>Fasilitas Kami</h2>
+            <div class="facility-grid">
+                <div class="facility-card">
+                    <i class="fas fa-bath"></i>
+                    <h3>Kamar Mandi Dalam</h3>
+                    <p>Setiap kamar memiliki kamar mandi pribadi</p>
+                </div>
+                <div class="facility-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Dapur Bersama</h3>
+                    <p>Fasilitas dapur yang lengkap dan bersih</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Galeri Kami</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://source.unsplash.com/random/400x300/?bedroom" alt="Kamar Tidur">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://source.unsplash.com/random/400x300/?bathroom" alt="Kamar Mandi">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://source.unsplash.com/random/400x300/?kitchen" alt="Dapur">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://source.unsplash.com/random/400x300/?living-room" alt="Ruang Tamu">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location">
+        <div class="container">
+            <h2>Lokasi Kami</h2>
+            <div class="location-content">
+                <p><i class="fas fa-map-marker-alt"></i> Gg. Kikir, RT.4/RW.5, Duren Tiga, Kec. Pancoran, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12760</p>
+                <div class="map-container">
+                    <div class="embed-map-responsive">
+                        <div class="embed-map-container">
+                            <iframe class="embed-map-frame" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&height=400&hl=en&q=gg%20kikir%2C&t=&z=14&ie=UTF8&iwloc=B&output=embed" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Hubungi Kami</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p><i class="fas fa-phone"></i> +62 888-0978-3135</p>
+                </div>
+                <a href="https://wa.me/6288809783135" class="whatsapp-button" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Hubungi via WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Kost N Kontrakan Rozak. Semua Hak Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav ul').classList.toggle('active');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
 </html>

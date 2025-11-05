@@ -7,24 +7,35 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="/assets/images/ROZAK HOME.png" type="image/png">
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/ROZAK HOME.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/images/ROZAK HOME.png">
+    <meta name="theme-color" content="#4a6fa5">
+    <meta name="description" content="Kost dan Kontrakan Rozak - Tempat tinggal nyaman dengan fasilitas lengkap di lokasi strategis. Hubungi kami sekarang untuk info lebih lanjut.">
+    <meta name="keywords" content="kost, kontrakan, sewa kost, sewa kontrakan, kost jakarta, kontrakan jakarta, kost dekat kampus, kost murah">
+    <meta name="author" content="Kost N Kontrakan Rozak">
 
 </head>
 <body>
     <!-- Header/Navbar -->
     <header class="header">
         <div class="container">
-            <nav class="nav">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#facilities">Fasilitas</a></li>
-                    <li><a href="#location">Lokasi</a></li>
-                    <li><a href="#contact">Kontak</a></li>
-                </ul>
-            </nav>
+            <div class="logo">
+                <img src="assets/images/ROZAK HOME.png" alt="Kost N Kontrakan Rozak" class="logo-img">
+                <span>Kost N Kontrakan Rozak</span>
+            </div>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#facilities" class="nav-link">Fasilitas</a></li>
+                    <li><a href="#location" class="nav-link">Lokasi</a></li>
+                    <li><a href="#contact" class="nav-link">Kontak</a></li>
+                </ul>
+            </nav>
+            <div class="overlay"></div>
         </div>
     </header>
 
@@ -99,17 +110,45 @@
 
     <script>
         // Mobile menu toggle
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav ul').classList.toggle('active');
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.nav');
+        const overlay = document.querySelector('.overlay');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        // Toggle menu
+        menuToggle.addEventListener('click', function() {
+            nav.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+        });
+        
+        // Close menu when clicking on overlay
+        overlay.addEventListener('click', function() {
+            nav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // Close menu when clicking on a nav link
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                nav.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
         });
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80, // Adjust for header height
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
     </script>

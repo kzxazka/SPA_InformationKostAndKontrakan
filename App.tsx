@@ -59,7 +59,7 @@ const App: React.FC = () => {
         {/* Galeri Section */}
         <section id="galeri" className="py-20 bg-white">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-dark mb-12">Galeri Kost Barokah</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-dark mb-12">Galeri Kost Rozak</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {galleryImages.map((src, index) => (
                 <div key={index} className="overflow-hidden rounded-lg shadow-lg aspect-w-4 aspect-h-3">
@@ -109,7 +109,7 @@ const App: React.FC = () => {
 
       <footer className="bg-dark text-center py-6">
         <div className="container mx-auto px-4 text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Kost Barokah. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Kost Rozak. All Rights Reserved.</p>
         </div>
       </footer>
     </div>
